@@ -1,0 +1,65 @@
+#EPA SOFT + IRON EXPERIMENTS
+SOLUTION 1
+pH 7.885
+pe 1.9595
+temp    12
+-water 0.075347
+-units	mg/L
+Cl 6.305
+S(6) 47.755
+C 42.7
+N(+5)	1.397506E-01
+Ca	    7.226813E+00
+Mg	    5.875167E+00
+Na	    1.383267E+01
+K	    1.176236E+00
+Cat     1 charge
+SAVE SOLUTION 1
+END
+USE SOLUTION 1
+GAS_PHASE 1
+-fixed_volume
+-volume 		0.076
+-pressure       1
+H2(g)   		0  		#only H2, CO2 can form in the headspace
+CO2(g)   		0
+EQUILIBRIUM_PHASES 1
+Magnetite 0 0   #Strong precipitate
+Maghemite 0 0   #Weaker precipitate
+#Hematite 0 0
+#Goethite 0 0
+KINETICS 1
+#parameter to calibrate: Kwo,Kws,Kwc,kih
+-step 9072000 in 105
+################################################################################
+Waterox
+-formula 	H2O 2.0 			Fe+2 -1.0 			   H2 -1.0 		OH-		-2.0
+-parms 1.6257e-09 8.2174e-21 0.098104
+#		  	KWO			  		-					   MI
+#		  	mol/(gFe s)    	    Keq(should 1.6596e-12) g Fe/Laq
+-m0 0
+-tol 1e-10
+-cvode true
+RATES
+Waterox
+-start
+20 G=(parm(3)- m*55.845)#gFe ASSUMING ONLY WATER CONSUMES IRON
+21 if G<0 then G=0
+22 IAP = ACT("Fe+2")*ACT("H2")*ACT("OH-")*ACT("OH-")
+23 if ((IAP/parm(2))-1)<0 then rate = parm(1)*G*((IAP/parm(2))-1) else rate=0
+80 moles=rate*time
+200 save moles
+-end
+INCREMENTAL_REACTIONS true
+SELECTED_OUTPUT
+-file conc.txt
+-reset false
+USER_PUNCH
+-headings   days   H2_hs(ml)  pH H2_L
+-start
+10 PUNCH   total_time/86400
+11 PUNCH   GAS("H2(g)")*24042.20577
+12 PUNCH   -LA("H+")
+13 PUNCH   mol("H2")*0.1*24042.20577
+-end
+END

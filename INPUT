@@ -1,0 +1,480 @@
+# Created by Octave 4.2.1, Sun May 14 00:00:52 2017 GMT <unknown@unknown>
+# name: BATCH
+# type: cell
+# rows: 65
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 28
+#EPA SOFT + IRON EXPERIMENTS
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+SOLUTION 1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+pH 7.885
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 9
+pe 1.9595
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+temp    12
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 15
+-water 0.075347
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+-units	mg/L
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 8
+Cl 6.305
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+S(6) 47.755
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+C 42.7
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 18
+N(+5)	1.397506E-01
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 19
+Ca	    7.226813E+00
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 19
+Mg	    5.875167E+00
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 19
+Na	    1.383267E+01
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 18
+K	    1.176236E+00
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 16
+Cat     1 charge
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 15
+SAVE SOLUTION 1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+END
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 14
+USE SOLUTION 1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+GAS_PHASE 1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+-fixed_volume
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 15
+-volume 		0.076
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 17
+-pressure       1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 54
+H2(g)   		0  		#only H2, CO2 can form in the headspace
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+CO2(g)   		0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 20
+EQUILIBRIUM_PHASES 1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 35
+Magnetite 0 0   #Strong precipitate
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 35
+Maghemite 0 0   #Weaker precipitate
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+#Hematite 0 0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 13
+#Goethite 0 0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+KINETICS 1
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 40
+#parameter to calibrate: Kwo,Kws,Kwc,kih
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 20
+-step 9072000 in 105
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 80
+################################################################################
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 7
+Waterox
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 56
+-formula 	H2O 2.0 			Fe+2 -1.0 			   H2 -1.0 		OH-		-2.0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 49
+-parms 		0.6e-11 			1.659587E-12           14.114
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 27
+#		  	KWO			  		-					   MI
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 57
+#		  	mol/(gFe s)    	    Keq(should 1.6596e-12) g Fe/Laq
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 5
+-m0 0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+-tol 1e-10
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+-cvode true
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 5
+RATES
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 7
+Waterox
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+-start
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 62
+20 G=(parm(3)- m*55.845)#gFe ASSUMING ONLY WATER CONSUMES IRON
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 18
+21 if G<0 then G=0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 52
+22 IAP = ACT("Fe+2")*ACT("H2")*ACT("OH-")*ACT("OH-")
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 77
+23 if ((IAP/parm(2))-1)<0 then rate = parm(1)*G*((IAP/parm(2))-1) else rate=0
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 18
+80 moles=rate*time
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 14
+200 save moles
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 4
+-end
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 26
+INCREMENTAL_REACTIONS true
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 15
+SELECTED_OUTPUT
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 14
+-file conc.txt
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 12
+-reset false
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 10
+USER_PUNCH
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 37
+-headings   days   H2_hs(ml)  pH H2_L
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 6
+-start
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 27
+10 PUNCH   total_time/86400
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 35
+11 PUNCH   GAS("H2(g)")*24042.20577
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 20
+12 PUNCH   -LA("H+")
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 36
+13 PUNCH   mol("H2")*0.1*24042.20577
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 4
+-end
+
+
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 3
+END
+
+
+
+
+
+# name: M
+# type: matrix
+# rows: 6
+# columns: 3
+ 0 0 7.885
+ 7 2.88 7.51
+ 14 7.08 8.095000000000001
+ 28 11.36 7.86
+ 49 13.26 8.19
+ 105 22.16 8.154999999999999
+
+
+# name: ic
+# type: scalar
+0.09810389999999999
+
+

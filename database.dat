@@ -1,0 +1,676 @@
+###############################################################################
+SOLUTION_MASTER_SPECIES
+#
+#element	species	alk		gfw_formula	element_gfw
+#
+H			H+		-1.0	H			1.008
+H(0)		H2		0.0		H
+Id		    Id		0.0		Id			1.008
+H(1)		H+		-1.0	0.0
+E			e-		0.0		0.0			0.0
+O			H2O		0.0		O			16.0
+O(0)		O2		0.0		O
+O(-2)		H2O		0.0		0.0
+Ca			Ca+2	0.0		Ca			40.08
+Mg			Mg+2	0.0		Mg			24.312
+Na			Na+		0.0		Na			22.9898
+Fe			Fe+2	0.0		Fe			55.847
+Fe(+2)		Fe+2	0.0		Fe
+Fe(+3)		Fe+3	-2.0	Fe
+Mn			Mn+2	0.0		Mn			54.938
+Mn(+2)		Mn+2	0.0		Mn
+Mn(+3)		Mn+3	0.0		Mn
+Cl			Cl-	0.0	Cl		35.453
+C			CO3-2	2.0		HCO3		12.0111
+C(+4)		CO3-2	2.0		HCO3
+#############BIOLOGICAL CONTROL OF METHANE#########################
+Meth		Meth	0.0		Meth		16.0111
+Alkalinity	CO3-2	1.0		Ca0.5(CO3)0.5	50.05
+############SOLFATE AND SOLFURE DISCONNETED#######################
+S			SO4-2	0.0		S			32.064	
+S(6)		SO4-2	0.0		S				
+Sulf		SulfH-	1.0		Sulf		32.064	
+###################################################################
+N			NO3-	0.0		N			14.0067
+N(+5)		NO3-	0.0		N
+N(+3)		NO2-	0.0		N
+N(0)		N2		0.0		N
+Amm			AmmH+	0.0		AmmH		18.0
+Pce			Pce		0.0		Pce  		165.8	
+Tce			Tce		0.0		Tce  		131.39	
+Dcecis		Dcecis	0.0		Dcecis		98.96
+Dcetrans	Dcetrans 0.0	Dcetrans 	98.96
+Vc			Vc		0.0		Vc  		62.498	
+Ethe		Ethe	0.0		Ethe  		28.0536
+Etha		Etha	0.0		Etha  		30.0694
+#Others
+Tca			Tca		0.0		Tca			133.4052	#C2H3Cl3		
+Dca			Dca		0.0		Dca			98.9602		#C2H4Cl2
+Cet			Cet		0.0		Cet			64.5152		#C2H5Cl
+Ace			Ace		0.0		Ace			26.0378		#Acetylene
+Cat			Cat+	0.0		Cat			0.1
+An			An-		0.0		An			0.1
+###############################################################################
+K			K+		0.0 	K			39.102
+
+
+SOLUTION_SPECIES
+#USER DEFINED
+H2O + 0.01e- = H2O -0.01
+	log_k	-9.0
+SO4-2 = SO4-2
+	log_k	0.0
+	-gamma	5.0	-0.04
+SulfH- = SulfH-
+	log_k 0.0
+Meth = Meth
+	log_k 0.0
+Cat+ = Cat+
+	log_k 0.0
+An- = An-
+	log_k 0.0
+Pce = Pce
+	log_k 0.0
+Tce = Tce
+	log_k 0.0
+Dcecis = Dcecis
+	log_k 0.0
+Dcetrans = Dcetrans
+	log_k 0.0
+Vc = Vc
+	log_k 0.0
+Ethe = Ethe
+	log_k 0.0	
+Etha = Etha
+	log_k 0.0
+#Others
+Tca = Tca
+	log_k 0.0
+Dca = Dca
+	log_k 0.0
+Cet = Cet
+	log_k 0.0
+Ace = Ace
+	log_k 0.0
+##################################
+H+ = H+
+	log_k	0.0
+	-gamma	9.0	0.0
+H2 = H2
+	log_k 0.0
+Id = Id
+	log_k 0.0
+e- = e-
+	log_k	0.0
+H2O = H2O
+	log_k	0.0
+Ca+2 = Ca+2
+	log_k	0.0
+	-gamma	5.0	0.1650
+Mg+2 = Mg+2
+	log_k	0.0
+	-gamma	5.5	0.20
+Na+ = Na+
+	log_k	0.0
+	-gamma	4.0	0.075
+Fe+2 = Fe+2
+	log_k	0.0
+	-gamma	6.0	0.0
+Mn+2 = Mn+2
+	log_k	0.0
+	-gamma	6.0	0.0
+Cl- = Cl-
+	log_k	0.0
+	-gamma	3.5	0.015
+CO3-2 = CO3-2
+	log_k	0.0
+	-gamma	5.4	0.0
+NO3- = NO3-
+	log_k	0.0
+	-gamma	3.0	0.0
+AmmH+ = AmmH+
+	log_k	0.0
+	-gamma	2.5	0.0
+K+ = K+
+	log_k	0.0
+	-gamma	3.5 	0.015
+	-dw 	1.96e-9
+        -millero 7.26 0.0892 -0.000736 2.722 -0.101 0.00151
+##### Aqueous equilibrium reactions involving O and H #####
+H2O = OH- + H+ #1 pg 216 mayer thesis 
+	log_k	-14.0
+	delta_h 13.362	kcal
+	-analytic	-283.971	-0.05069842	13323.0	102.24447	-1119669.0
+	-gamma	3.5	0.0
+2 H2O = O2 + 4 H+ + 4 e-
+	log_k	-86.08
+	delta_h 134.79 kcal
+2 H+ + 2 e- = H2
+	log_k	-3.15	#-3.15 (originally); could increase this value a little bit (eg. to +0.15) to simulate degassing of H2; has a large effect on simulated Eh!!
+	delta_h -1.759
+##### Aqueous equilibrium reactions involving C #####
+CO3-2 + H+ = HCO3- #55
+	log_k	10.329
+	delta_h -3.561	kcal
+	-analytic	107.8871	0.03252849	-5151.79	-38.92561	563713.9
+	-gamma	5.4	0.0
+CO3-2 + 2 H+ = CO2 + H2O #56
+	log_k	16.681
+	delta_h -5.738	kcal
+	-analytic	464.1965	0.09344813	-26986.16	-165.75951	2248628.9
+##### Aqueous equilibrium reactions involving S #####
+SO4-2 + H+ = HSO4- #57
+	log_k	1.988
+	delta_h 3.85	kcal
+	-analytic	-56.889	0.006473	2307.9	19.8858	0.0
+SulfH- = Sulf-2 + H+ #59
+	log_k	-12.918
+	delta_h 12.1	kcal
+	-gamma	5.0	0.0
+SulfH- + H+ = SulfH2 #58
+	log_k	6.994
+	delta_h -5.30	kcal #-5.30 (originally)/-53.0 ME; likely kinetically/microbially controlled
+      -analytical  -11.17   0.02386  3279.0
+##### Aqueous equilibrium reactions involving N #####
+NO3- + 2 H+ + 2 e- = NO2- + H2O
+	log_k	28.570
+	delta_h -43.760 kcal
+	-gamma	3.0	0.0
+2 NO3- + 12 H+ + 10 e- = N2 + 6 H2O
+	log_k	207.08
+	delta_h -312.130	kcal
+AmmH+ = Amm + H+ #4
+	log_k	-9.252
+	delta_h 12.48	kcal
+        -analytic    0.6322    -0.001225     -2835.76
+AmmH+ + SO4-2 = AmmHSO4- #5
+	log_k	1.11
+##### Aqueous equilibrium reactions involving Ca #####
+Ca+2 + H2O = CaOH+ + H+ #10
+	log_k	-12.78
+Ca+2 + CO3-2 = CaCO3 #12
+	log_k	3.224
+	delta_h 3.545	kcal
+	-analytic	-1228.732	-0.299440	35512.75	485.818
+Ca+2 + CO3-2 + H+ = CaHCO3+ #11
+	log_k	11.435
+	delta_h -0.871	kcal
+	-analytic	1317.0071	0.34546894	-39916.84	-517.70761	563713.9
+	-gamma	5.4	0.0
+Ca+2 + SO4-2 = CaSO4 #13
+	log_k	2.3
+	delta_h 1.650	kcal
+Ca+2 + HSO4- = CaHSO4+ #14 different
+        log_k   1.08
+##### Aqueous equilibrium reactions involving Mg #####
+Mg+2 + H2O = MgOH+ + H+ #6
+	log_k	-11.44
+	delta_h 15.952 kcal
+Mg+2 + CO3-2 = MgCO3 #7
+	log_k	2.98
+	delta_h 2.713	kcal
+	-analytic	0.9910	0.00667
+Mg+2 + H+ + CO3-2 = MgHCO3+ #8
+	log_k	11.399
+	delta_h -2.771	kcal
+	-analytic	48.6721	0.03252849	-2614.335	-18.00263	563713.9
+Mg+2 + SO4-2 = MgSO4 #9
+	log_k	2.37
+	delta_h 4.550	kcal
+##### Aqueous equilibrium reactions involving Na #####
+Na+ + H2O = NaOH + H+
+	log_k	-14.18
+Na+ + CO3-2 = NaCO3- #15
+	log_k	1.27
+	delta_h 8.910	kcal
+Na+ + HCO3- = NaHCO3 #16 different
+	log_k	-0.25
+Na+ + SO4-2 = NaSO4- #17
+	log_k	0.7
+	delta_h 1.120	kcal
+##### Aqueous equilibrium reactions involving Fe+2 #####
+Fe+2 + H2O = FeOH+ + H+ #26
+	log_k	-9.5
+	delta_h 13.20	kcal
+Fe+2 + 2H2O = Fe(OH)2 + 2H+		#32 #Reaction taken from wateq4f.dat (not in phreeqc!!) as in jeen
+	log_k		-20.57
+	delta_h 28.565 kcal
+Fe+2 + 3H2O = Fe(OH)3- + 3H+	#27 #Reaction taken from wateq4f.dat (not in phreeqc!!) as in jeen
+	log_k		-31.0
+	delta_h 30.3 kcal
+Fe+2 + Cl- = FeCl+ #37
+	log_k	0.14
+Fe+2 + CO3-2 = FeCO3	#31
+	log_k	4.38
+Fe+2 + HCO3- = FeHCO3+ #30 different
+	log_k	2.0
+#Fe+2 + CO3-2 + H+ = FeHCO3+ #JEEN
+#	log_k	12.330
+Fe+2 + SO4-2 = FeSO4	#28
+	log_k	2.25
+	delta_h 3.230	kcal
+Fe+2 + HSO4- = FeHSO4+ #29 different
+ 	log_k	1.08
+Fe+2 + 2SulfH- = Fe(SulfH)2
+	log_k	8.95
+Fe+2 + 3SulfH- = Fe(SulfH)3-
+	log_k	10.987
+Fe+2 = Fe+3 + e-
+	log_k	-13.02 #-13.02 ironfe3
+	delta_h 9.680	kcal
+	-gamma	9.0	0.0
+#### Aqueous equilibrium reactions involving Fe+3 #####
+Fe+3 + H2O = FeOH+2 + H+ #33
+	log_k	-2.19
+	delta_h 10.4	kcal
+Fe+3 + 2 H2O = Fe(OH)2+ + 2 H+ #40
+	log_k	-5.67
+	delta_h 17.1	kcal
+Fe+3 + 3 H2O = Fe(OH)3 + 3 H+ #41
+	log_k	-12.56
+	delta_h 24.8	kcal
+Fe+3 + 4 H2O = Fe(OH)4- + 4 H+ #42
+	log_k	-21.6
+	delta_h 31.9	kcal
+2 Fe+3 + 2 H2O = Fe2(OH)2+4 + 2 H+ #44
+	log_k	-2.95
+	delta_h 13.5	kcal
+3 Fe+3 + 4 H2O = Fe3(OH)4+5 + 4 H+ #45
+	log_k	-6.3
+	delta_h 14.3	kcal
+Fe+3 + Cl- = FeCl+2 #36
+	log_k	1.48
+	delta_h 5.6	kcal
+Fe+3 + 2 Cl- = FeCl2+ #38
+	log_k	2.13
+Fe+3 + 3 Cl- = FeCl3 #39
+	log_k	1.13
+Fe+3 + SO4-2 = FeSO4+	#34
+	log_k	4.04
+	delta_h 3.91	kcal
+Fe+3 + HSO4- = FeHSO4+2 #35 different
+	log_k	2.48
+Fe+3 + 2 SO4-2 = Fe(SO4)2- #43
+	log_k	5.38
+	delta_h 4.60	kcal
+##### Aqueous equilibrium reactions involving Mn #####
+Mn+2 + H2O = MnOH+ + H+ #49
+	log_k	-10.59
+	delta_h 14.40	kcal
+#new
+Mn+2 + 3 H2O = Mn(OH)3- + 3 H+ #50
+	log_k	-34.8	
+Mn+2 + Cl- = MnCl+ #46
+	log_k	0.61
+Mn+2 + 2 Cl- = MnCl2 #47
+	log_k	0.25
+Mn+2 + 3 Cl- = MnCl3- #48
+	log_k	-0.31
+Mn+2 + CO3-2 = MnCO3 #51
+	log_k	4.9
+Mn+2 + HCO3- = MnHCO3+ #54 different
+	log_k	1.95
+Mn+2 + SO4-2 = MnSO4 #52
+	log_k	2.25
+	delta_h 3.370	kcal
+Mn+2 + 2 NO3- = Mn(NO3)2 #53
+	log_k	0.6
+	delta_h -0.396	kcal
+Mn+2 = Mn+3 + e-
+	log_k	-25.51
+	delta_h 25.80	kcal
+####Equilibrium reactions involving K+
+K+ + H2O = KOH + H+
+	log_k	-14.46
+
+K+ + SO4-2 = KSO4-
+	log_k	0.85
+	delta_h 2.250	kcal
+	-analytical 	 3.106	0.0   -673.6
+	-dw 7.46e-10
+#HCl added, from llnl
+1.0000 H+ + 1.0000 Cl-  =  HCl
+     log_k           -0.67
+	delta_H	0
+EXCHANGE_MASTER_SPECIES
+	X	X-
+EXCHANGE_SPECIES
+	X- = X-
+	log_k	0.0
+
+	Na+ + X- = NaX
+	log_k	0.0
+	-gamma	4.0 	0.075
+
+	K+ + X- = KX
+	log_k	0.7
+	-gamma	3.5 	0.015
+	delta_h  -4.3	# Jardine & Sparks, 1984
+
+# !!!!!
+	H+ + X- = HX
+	log_k	1.0
+	-gamma	9.0 	0.0
+
+	AmmH+ + X- = AmmHX
+	log_k	0.6
+	-gamma	2.5 	0.0
+	delta_h  -2.4	# Laudelout et al., 1968
+	
+	Ca+2 + 2X- = CaX2
+	log_k	0.8
+	-gamma	5.0 	0.165
+	delta_h  7.2	# Van Bladel & Gheyl, 1980
+	
+	Mg+2 + 2X- = MgX2
+	log_k	0.6
+	-gamma	5.5 	0.2
+	delta_h  7.4	# Laudelout et al., 1968
+
+
+	Mn+2 + 2X- = MnX2
+	log_k	0.52
+	-gamma	6.0 	0.0
+
+	Fe+2 + 2X- = FeX2
+	log_k	0.44
+	-gamma	6.0 	0.0
+	
+#############################################################################
+#SURFACE 
+#############################################################################
+SURFACE_MASTER_SPECIES
+	Hfo_s  Hfo_sOH
+	Hfo_w  Hfo_wOH
+SURFACE_SPECIES
+#   All surface data from
+#   Dzombak and Morel, 1990
+#
+#
+#   Acid-base data from table 5.7
+#
+#   strong binding site--Hfo_s,
+
+	Hfo_sOH = Hfo_sOH
+	log_k  0.0
+
+	Hfo_sOH  + H+ = Hfo_sOH2+
+	log_k  7.29    # = pKa1,int
+
+	Hfo_sOH = Hfo_sO- + H+
+	log_k  -8.93   # = -pKa2,int
+
+#   weak binding site--Hfo_w
+
+	Hfo_wOH = Hfo_wOH
+	log_k  0.0
+
+	Hfo_wOH  + H+ = Hfo_wOH2+
+	log_k  7.29    # = pKa1,int
+
+	Hfo_wOH = Hfo_wO- + H+
+	log_k  -8.93   # = -pKa2,int
+
+###############################################
+#	     CATIONS			 #
+###############################################
+#
+#   Cations from table 10.1 or 10.5
+#
+#   Calcium
+	Hfo_sOH + Ca+2 = Hfo_sOHCa+2
+	log_k  4.97
+
+	Hfo_wOH + Ca+2 = Hfo_wOCa+ + H+
+	log_k -5.85
+
+# Iron
+#	Hfo_sOH + Fe+2 = Hfo_sOFe+ + H+
+#	log_k   0.7     # LFER using table 10.5
+
+#	Hfo_wOH + Fe+2 = Hfo_wOFe+ + H+
+#	log_k -2.5      # LFER using table 10.5
+
+# Iron, strong site: Appelo, Van der Weiden, Tournassat & Charlet, EST 36,
+	 Hfo_sOH + Fe+2 = Hfo_sOFe+ + H+
+	 log_k   -0.95
+# Iron, weak site: Liger et al., GCA 63, 2939, re-optimized for D&M
+	 Hfo_wOH + Fe+2 = Hfo_wOFe+ + H+
+	 log_k -2.98
+
+	 Hfo_wOH + Fe+2 + H2O = Hfo_wOFeOH + 2H+
+	 log_k -11.55
+
+###############################################
+#	     ANIONS			  #
+###############################################
+#
+#   Anions from table 10.8
+#
+#   Sulfate
+	Hfo_wOH + SO4-2 + H+ = Hfo_wSO4- + H2O
+	log_k   7.78
+
+	Hfo_wOH + SO4-2 = Hfo_wOHSO4-2
+	log_k   0.79
+
+	
+###############################################################################
+PHASES
+#PHREEQC DATABASE TO ASSESS POTENTIAL MINERALS
+Dolomite
+	CaMg(CO3)2 = Ca+2 + Mg+2 + 2 CO3-2
+	log_k	   -17.090
+	delta_h -9.436 kcal
+
+Siderite
+	FeCO3 = Fe+2 + CO3-2
+	log_k	   -10.890
+	delta_h -2.480 kcal
+
+Rhodochrosite
+	MnCO3 = Mn+2 + CO3-2
+	log_k	   -11.130
+	delta_h -1.430 kcal
+
+Gypsum
+	CaSO4:2H2O = Ca+2 + SO4-2 + 2 H2O
+	log_k	   -4.580
+	delta_h -0.109 kcal
+	-analytic       68.2401       0.0	  -3221.51      -25.0627
+
+Anhydrite
+	CaSO4 = Ca+2 + SO4-2
+	log_k	   -4.360
+	delta_h -1.710 kcal
+	-analytic       197.52	0.0	  -8669.8       -69.835
+
+
+Hematite
+	Fe2O3 + 6 H+ = 2 Fe+3 + 3 H2O
+	log_k	   -4.008
+	delta_h -30.845 kcal
+
+
+Fe(OH)3(a)
+	Fe(OH)3 + 3 H+ = Fe+3 + 3 H2O
+	log_k	   4.891
+
+
+
+Pyrolusite
+	MnO2 + 4 H+ + 2 e- = Mn+2 + 2 H2O
+	log_k	   41.380
+	delta_h -65.110 kcal
+
+Hausmannite
+	Mn3O4 + 8 H+ + 2 e- = 3 Mn+2 + 4 H2O
+	log_k	   61.030
+	delta_h -100.640 kcal
+
+Manganite
+	MnOOH + 3 H+ + e- = Mn+2 + 2 H2O
+	log_k	   25.340
+
+Pyrochroite
+	Mn(OH)2 + 2 H+ = Mn+2 + 2 H2O
+	log_k	   15.200
+
+Halite
+	NaCl = Na+ + Cl-
+	log_k	   1.582
+	delta_h 0.918 kcal
+
+CO2(g)
+	CO2 = CO2
+	log_k	   -1.468
+	delta_h -4.776 kcal
+	-analytic       108.3865      0.01985076   -6919.53      -40.45154      669365.0
+
+O2(g)
+	O2 = O2
+#	log_k	   -2.960
+#	delta_h -1.844  kcal
+	 # log K from llnl.dat  Aug 23, 2005
+	log_k	   -2.8983
+	-analytic -7.5001e+000 7.8981e-003 0.0000e+000 0.0000e+000 2.0027e+005
+
+H2(g)
+	H2 = H2
+	log_k	   -3.150
+	delta_h -1.759  kcal
+
+H2O(g)
+	H2O = H2O
+	log_k	   1.51
+	delta_h	 -44.03   kJ
+#    Stumm and Morgan, from NBS and Robie, Hemmingway, and Fischer (1978)
+
+N2(g)
+	N2 = N2
+	log_k	   -3.260
+	delta_h -1.358  kcal
+
+Melanterite
+	FeSO4:7H2O = 7 H2O + Fe+2 + SO4-2
+	log_k	   -2.209
+	delta_h 4.910	   kcal
+	-analytic       1.447	-0.004153      0.0	   0.0	  -214949.0
+
+#Jarosite-K
+#	KFe3(SO4)2(OH)6 + 6 H+ = 3 Fe+3 + 6 H2O + K+ + 2 SO4-2
+#	log_k	   -9.210
+#	delta_h -31.280 kcal
+################################################################################################
+#ADDED
+Fix_pH
+      H+ = H+
+      log_k 0
+HCl(g)
+        HCl  =  + 1.0000 Cl- + 1.0000 H+     
+        log_k           6.3055
+	-delta_H	-74.7697	kJ/mol	# Calculated enthalpy of reaction	HCl(g)
+#	Enthalpy of formation:	-92.31 kJ/mol
+        -analytic -2.8144e-001 -8.6776e-003 3.0668e+003 -4.5105e-001 5.2078e+001
+#       -Range:  0-200
+
+H2(g)
+        H2 = H2
+        log_k           -3.150
+        delta_h -1.759  kcal
+Id(g)
+        Id = Id
+        log_k           -3.150
+        delta_h -1.759  kcal
+CO2(g)
+	CO2= CO2
+	log_k	-1.468
+	delta_h -4.776 kcal
+	-analytic	108.3865	0.01985076	-6919.53	-40.45154	669365.0
+N2(g)
+	N2 = N2
+	log_k	   -3.260
+	delta_h -1.358  kcal
+H2O(g)
+	H2O = H2O
+	log_k	   1.51
+	delta_h	 -44.03   kJ
+
+SulfH2(g)
+	SulfH2 = SulfH2
+	log_k	   -0.997
+	delta_h -4.570  kcal
+	
+Meth(g)
+	Meth = Meth
+	log_k	   -2.860
+	delta_h -3.373  kcal
+#    Stumm and Morgan, from NBS and Robie, Hemmingway, and Fischer (1978)
+Aragonite
+	CaCO3 =  CO3-2 + Ca+2
+	log_k	-8.36				#-8.360 Aragonite jeen, -8.48 Calcite Phreeqc,-8.336 Aragonite Phreeqc
+	delta_h -2.589 kcal
+	-analytic	-171.9773	-0.077993	2903.293	71.595
+Ironhydroxide
+	Fe(OH)2 + 2H+ = Fe+2 + 2H2O
+	log_k	14					#13.905 jeen 2007, 14 Wilkin 2010
+	delta_h	-0	kJ
+Ironcarbonate
+	Fe2(CO3)(OH)2 + 2H+ = 2 Fe+2 + CO3-2 +2H2O
+	log_k	    1.56			#-0.075 jeen 2007, 11.9+/-0.5 Wilkin 2010
+	delta_h	-0	kJ
+ #from minteq
+Magnetite
+	Fe3O4 + 8H+ = 2Fe+3 + Fe+2 + 4H2O
+	log_k	3.4028
+	delta_h	-208.526	kJ
+Hematite
+	Fe2O3 + 6H+ = 2Fe+3 + 3H2O
+	log_k	-1.418
+	delta_h	-128.987	kJ
+Maghemite
+	Fe2O3 + 6H+ = 2Fe+3 + 3H2O
+	log_k	6.386
+	delta_h	-0	kJ
+Lepidocrocite
+	FeOOH + 3H+ = Fe+3 + 2H2O
+	log_k	1.371
+	delta_h	-0	kJ
+Goethite
+	FeOOH + 3H+ = Fe+3 + 2H2O
+	log_k	0.491
+	delta_h	-60.5843	kJ
+##
+FeS(am)
+	FeSulf + H+ = Fe+2 + SulfH-
+	log_k	-4.648
+Siderite
+	FeCO3 = Fe+2 + CO3-2
+	log_k	-10.65	#-10.89 phreeqc, -10.65 Wilkin 2010
+	delta_h  -2.480 kcal
+###############################################################################
+###############################################################################
+Nahcolite
+        NaHCO3  =  + 1.0000 HCO3- + 1.0000 Na+
+        log_k           -0.1118
+	-delta_H	17.0247	kJ/mol	# Calculated enthalpy of reaction	Nahcolite
+#	Enthalpy of formation:	-226.4 kcal/mol
+        -analytic -2.2282e+002 -5.9693e-002 5.4887e+003 8.9744e+001 8.5712e+001
+#       -Range:  0-300
+Kalicinite 
+        KHCO3  =  + 1.0000 HCO3- + 1.0000 K+
+        log_k           0.2837
+	-delta_H	0	      	# Not possible to calculate enthalpy of reaction	Kalicinite
+#	Enthalpy of formation:	0 kcal/mol
+Antarcticite
+        CaCl2:6H2O  =  + 1.0000 Ca++ + 2.0000 Cl- + 6.0000 H2O
+        log_k           4.0933
+	-delta_H	0	      	# Not possible to calculate enthalpy of reaction	Antarcticite
+#	Enthalpy of formation:	0 kcal/mol
+Bischofite
+        MgCl2:6H2O  =  + 1.0000 Mg++ + 2.0000 Cl- + 6.0000 H2O
+        log_k           4.3923
+	-delta_H	0	      	# Not possible to calculate enthalpy of reaction	Bischofite
+#	Enthalpy of formation:	0 kcal/mol	
+
+END

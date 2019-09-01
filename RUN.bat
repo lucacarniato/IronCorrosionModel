@@ -1,0 +1,1 @@
+phreeqc BATCH_IN.txt BATCH_OUT.txt database.dat >NUL
