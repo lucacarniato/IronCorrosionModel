@@ -5,7 +5,7 @@ Velimirovic, M., Auffan, M., Carniato, L., Batka, V. M., Schmid, D., Wagner, S.,
 To reproduce the results run "OptimizeParameters.m" inside a matlab session. Otherwise you can use the script in octave. 
 Octave installer can be dowloaded here: https://ftp.gnu.org/gnu/octave/windows/octave-4.2.1-w64-installer.exe. 
 
-The PL variable is used to control the optimization (PL=0, optimiza, PL=1 plot the results).
+The PL variable is used to control the optimization (PL=0, optimize, PL=1 plot the results).
 Make sure the phreeqc.exe and the files sceua.m and cceua.m are inside the working directory. These are the files of the Shuffled Complex Evolution (SCE-UA) method.
 
 https://www.mathworks.com/matlabcentral/fileexchange/7671-shuffled-complex-evolution-sce-ua-method
